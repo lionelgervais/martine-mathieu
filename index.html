@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Martine Mathieu, peintre</title>
+<meta name="robots" content="noimageindex">
+<meta name="description" content="Martine Mathieu, peintre : galerie d’œuvres, démarche, salons et expositions, contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papier:#FFF7EE; --surface:#FFFFFF; --encre:#2B1D3A; --doux:#6B5A78; --trait:#EADCCB;
+  --jaune:#F2B33D; --rouge:#C8314B; --bleu:#2457A6; --vert:#1F8A70; --rose:#EE8AA0;
+  --melange:multiply;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --papier:#1D1526; --surface:#281E33; --encre:#F6EDE3; --doux:#C3B3CC; --trait:#3B2E48;
+    --jaune:#F5C056; --rouge:#E0546B; --bleu:#6A97E6; --vert:#3FB894; --rose:#F29BB0;
+    --melange:screen; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --papier:#1D1526; --surface:#281E33; --encre:#F6EDE3; --doux:#C3B3CC; --trait:#3B2E48;
+  --jaune:#F5C056; --rouge:#E0546B; --bleu:#6A97E6; --vert:#3FB894; --rose:#F29BB0;
+  --melange:screen; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4.5rem)}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;-webkit-tap-highlight-color:transparent;background:var(--papier);color:var(--encre);
+  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;font-size:1.125rem;line-height:1.65}
+h1,h2,h3,.titre-site,nav a{font-family:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif}
+img{max-width:100%;display:block}
+/* Protection dissuasive des images : pas de menu « Enregistrer », pas de glisser-déposer */
+main img,dialog img{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;-webkit-user-drag:none;pointer-events:none}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--bleu);outline-offset:3px;border-radius:4px}
+.conteneur{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+
+/* En-tête */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--papier)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--papier);background:color-mix(in srgb,var(--papier) 92%,transparent);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+.barre{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.8rem;flex-wrap:wrap}
+.titre-site{font-weight:800;font-size:1.25rem;text-decoration:none;letter-spacing:-.01em}
+nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;overflow-x:auto}
+nav a{text-decoration:none;font-size:1rem;display:inline-flex;align-items:center;gap:.45rem;white-space:nowrap;padding-block:.25rem}
+nav a::before{content:"";width:.6rem;height:.6rem;border-radius:50%;background:var(--pigment)}
+nav a:hover{text-decoration:underline;text-decoration-color:var(--pigment);text-decoration-thickness:3px;text-underline-offset:5px}
+
+/* Accueil */
+.accueil{display:grid;grid-template-columns:1.05fr 1fr;align-items:center;gap:2rem;padding-block:3.5rem 4.5rem}
+.accueil h1{font-size:clamp(3rem,9vw,6.5rem);line-height:.92;font-weight:800;letter-spacing:-.03em;margin:0 0 1.2rem}
+.accueil p{font-size:1.25rem;color:var(--doux);max-width:32ch;margin:0 0 2rem}
+.bouton{display:inline-block;background:var(--encre);color:var(--papier);text-decoration:none;font-family:"Bricolage Grotesque",system-ui,sans-serif;
+  font-weight:700;padding:.85rem 1.5rem;border-radius:999px}
+.bouton:hover{background:var(--rouge);color:#fff}
+.tableau-accueil{margin:0;aspect-ratio:1;overflow:hidden;border-radius:47% 53% 44% 56% / 54% 46% 54% 46%;
+  box-shadow:0 30px 60px -30px rgba(43,29,58,.6);animation:pose 1s cubic-bezier(.2,.8,.2,1) backwards}
+.tableau-accueil img{width:100%;height:100%;object-fit:cover}
+@keyframes pose{from{opacity:0;transform:scale(.92)}}
+@media (prefers-reduced-motion: reduce){.tableau-accueil{animation:none}html{scroll-behavior:auto}}
+
+/* Sections */
+section.bloc{padding-block:4rem}
+.bloc h2{font-size:clamp(2rem,5vw,3rem);font-weight:800;letter-spacing:-.02em;margin:0 0 2rem;display:inline-block;position:relative}
+.bloc h2::after{content:"";position:absolute;left:-.2em;right:-.3em;bottom:.05em;height:.38em;z-index:-1;border-radius:.5em .2em .6em .25em;
+  background:var(--pigment);opacity:.55;transform:rotate(-1.2deg)}
+.bloc h2{isolation:isolate}
+#galerie,[href="#galerie"]{--pigment:var(--rouge)}
+#demarche,[href="#demarche"]{--pigment:var(--bleu)}
+#expositions,[href="#expositions"]{--pigment:var(--vert)}
+#contact,[href="#contact"]{--pigment:var(--jaune)}
+
+/* Galerie */
+.filtres{display:flex;flex-wrap:wrap;gap:.6rem;margin:0 0 2rem}
+.filtres button{font:inherit;font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:1rem;cursor:pointer;
+  background:transparent;color:var(--encre);border:2px solid var(--trait);border-radius:999px;padding:.4rem 1.1rem}
+.filtres button:hover{border-color:var(--rouge)}
+.filtres button[aria-pressed="true"]{background:var(--rouge);border-color:var(--rouge);color:#fff}
+.filtres small{opacity:.7;margin-left:.35rem}
+.vide{color:var(--doux)}
+.grille{columns:3 280px;column-gap:1.5rem}
+.oeuvre{-webkit-column-break-inside:avoid;break-inside:avoid;margin:0 0 1.75rem}
+.oeuvre button{all:unset;cursor:zoom-in;display:block;width:100%;border-radius:6px}
+.oeuvre button:focus-visible{outline:3px solid var(--bleu);outline-offset:4px}
+.toile{width:100%;background:var(--surface);border-radius:6px;overflow:hidden;box-shadow:0 1px 0 var(--trait),0 12px 28px -18px rgba(43,29,58,.55)}
+.toile img,.toile svg{width:100%;height:100%;object-fit:cover;display:block}
+.toile img{height:auto}
+.oeuvre figcaption{padding-top:.7rem;font-size:1rem;line-height:1.4}
+.oeuvre figcaption strong{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-size:1.05rem}
+.oeuvre figcaption span{display:block;color:var(--doux)}
+
+/* Démarche */
+.demarche{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:3rem;align-items:start}
+.portrait{aspect-ratio:4/5;border-radius:48% 52% 45% 55% / 55% 45% 55% 45%;overflow:hidden;background:var(--surface)}
+.portrait img,.portrait svg{width:100%;height:100%;object-fit:cover}
+.texte{max-width:62ch}
+.texte p{margin:0 0 1.1rem}
+.texte blockquote{margin:1.8rem 0;padding-left:1.2rem;border-left:4px solid var(--bleu);font-style:italic;font-size:1.25rem}
+
+/* Expositions */
+.chrono{list-style:none;margin:0;padding:0;max-width:760px}
+.chrono{max-width:880px}
+.chrono li{display:grid;grid-template-columns:9.5rem 1fr;gap:1.5rem;align-items:start;padding:1.2rem 0;border-top:1px solid var(--trait)}
+.chrono li:last-child{border-bottom:1px solid var(--trait)}
+.chrono time{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700;color:var(--vert)}
+.chrono h3{margin:0;font-size:1.2rem}
+.chrono p{margin:.2rem 0 0;color:var(--doux)}
+.chrono li.avec-affiche{grid-template-columns:9.5rem 1fr 7.5rem}
+.affiche{all:unset;cursor:zoom-in;display:block;border-radius:4px;overflow:hidden;box-shadow:0 10px 22px -14px rgba(43,29,58,.7);transform:rotate(1.5deg)}
+.chrono li:nth-child(even) .affiche{transform:rotate(-1.5deg)}
+.affiche:hover{transform:none}
+.affiche:focus-visible{outline:3px solid var(--vert);outline-offset:3px}
+.affiche img{width:100%;height:auto}
+.vue-affiche{max-width:min(620px,94vw)}
+#affiche-grande img{max-height:82vh;width:auto;max-width:100%;margin-inline:auto;display:block;border-radius:4px;cursor:zoom-out}
+.vue-affiche .commandes{justify-content:center}
+.a-venir{display:inline-block;margin-top:.5rem;background:var(--vert);color:#fff;font-size:.85rem;padding:.15rem .7rem;border-radius:999px;font-family:"Bricolage Grotesque",system-ui,sans-serif}
+
+/* Contact */
+.contact{background:var(--jaune);color:#2B1D3A;border-radius:2.5rem 1rem 3rem 1.5rem;padding:clamp(2rem,5vw,3.5rem)}
+.contact h2::after{background:var(--surface);opacity:.7}
+.contact dl{display:grid;grid-template-columns:auto 1fr;gap:.6rem 1.5rem;margin:0 0 2rem}
+.contact dt{font-family:"Bricolage Grotesque",system-ui,sans-serif;font-weight:700}
+.contact dd{margin:0}
+.contact .bouton{background:#2B1D3A;color:#FFF7EE}
+.contact .bouton:hover{background:var(--rouge)}
+
+footer{padding-block:2.5rem;color:var(--doux);font-size:.95rem}
+footer .conteneur{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+/* Visionneuse */
+dialog{border:none;padding:0;background:transparent;max-width:min(1000px,94vw);width:100%;color:#fff}
+dialog::backdrop{background:rgba(20,12,28,.88)}
+.vue{display:grid;gap:.9rem}
+.vue .toile{max-height:75vh;display:flex;justify-content:center;background:transparent;box-shadow:none}
+.vue .toile img,.vue .toile svg{width:auto;max-width:100%;max-height:75vh;height:auto}
+.vue-bas{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.vue-bas p{margin:0;font-size:1rem}
+.vue-bas strong{font-family:"Bricolage Grotesque",system-ui,sans-serif}
+.commandes{display:flex;gap:.5rem}
+.commandes button{font:inherit;font-size:.95rem;background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:.45rem 1rem;cursor:pointer}
+.commandes button:hover{background:rgba(255,255,255,.28)}
+
+@media (max-width:760px){
+  .accueil{grid-template-columns:1fr;padding-block:2rem 3rem}
+  .accueil .tableau-accueil{order:-1;width:100%;max-width:420px;margin-inline:auto}
+  .demarche{grid-template-columns:1fr;gap:2rem}
+  .portrait{max-width:280px}
+  .chrono li,.chrono li.avec-affiche{grid-template-columns:1fr 6rem;grid-template-rows:auto 1fr;gap:.3rem 1rem}
+  .chrono time{grid-column:1}
+  .chrono li > div{grid-column:1}
+  .chrono .affiche{grid-column:2;grid-row:1 / span 2}
+  .contact dl{grid-template-columns:1fr;gap:.1rem}
+  .contact dd{margin-bottom:.7rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="conteneur barre">
+    <a class="titre-site" href="#haut">Martine Mathieu</a>
+    <nav aria-label="Rubriques">
+      <ul>
+        <li><a href="#galerie">Galerie</a></li>
+        <li><a href="#demarche">Démarche</a></li>
+        <li><a href="#expositions">Salons</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="haut">
+  <div class="conteneur accueil">
+    <div>
+      <h1>Martine Mathieu</h1>
+      <p>Peintre. [Une phrase qui résume son univers : sujets, couleurs, technique.]</p>
+      <a class="bouton" href="#galerie">Voir les œuvres</a>
+    </div>
+    <figure class="tableau-accueil"><img src="images/oeuvre-06.jpg" alt="Tableau de Martine Mathieu aux rouges, roses et bleus"></figure>
+  </div>
+
+  <section class="bloc" id="galerie" aria-labelledby="titre-galerie">
+    <div class="conteneur">
+      <h2 id="titre-galerie">Galerie</h2>
+      <div class="filtres" id="filtres" role="group" aria-label="Afficher par thème"></div>
+      <div class="grille" id="grille"></div>
+      <p class="vide" id="vide" hidden>Aucune œuvre dans ce thème pour l’instant.</p>
+    </div>
+  </section>
+
+  <section class="bloc" id="demarche" aria-labelledby="titre-demarche">
+    <div class="conteneur">
+      <h2 id="titre-demarche">Démarche</h2>
+      <div class="demarche">
+        <div class="portrait" id="portrait"></div>
+        <div class="texte">
+          <p>[Parcours : comment Martine Mathieu est venue à la peinture, sa formation, ses ateliers ou ses maîtres.]</p>
+          <p>[Démarche : ce qu’elle cherche à peindre, ses thèmes de prédilection, ce qui l’inspire.]</p>
+          <blockquote>[Une citation de l’artiste sur sa peinture.]</blockquote>
+          <p>[Technique : huile, acrylique, aquarelle, couteau, supports, formats…]</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloc" id="expositions" aria-labelledby="titre-expos">
+    <div class="conteneur">
+      <h2 id="titre-expos">Salons et expositions</h2>
+      <ol class="chrono" id="chrono" reversed></ol>
+    </div>
+  </section>
+
+  <section class="bloc" id="contact" aria-labelledby="titre-contact">
+    <div class="conteneur">
+      <div class="contact">
+        <h2 id="titre-contact">Contact</h2>
+        <dl id="coordonnees"></dl>
+        <a class="bouton" id="lien-mail" href="#contact">Écrire à Martine Mathieu</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="conteneur">
+    <span>© <span id="annee"></span> Martine Mathieu. Toutes les œuvres sont protégées par le droit d’auteur.</span>
+  </div>
+</footer>
+
+<dialog id="visionneuse" aria-label="Œuvre agrandie">
+  <div class="vue">
+    <div class="toile" id="vue-toile"></div>
+    <div class="vue-bas">
+      <p id="vue-legende"></p>
+      <div class="commandes">
+        <button type="button" id="prec" aria-label="Œuvre précédente">Précédente</button>
+        <button type="button" id="suiv" aria-label="Œuvre suivante">Suivante</button>
+        <button type="button" id="fermer">Fermer</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="vue-affiche" class="vue-affiche" aria-label="Affiche agrandie">
+  <div class="vue">
+    <div id="affiche-grande"></div>
+    <div class="commandes"><button type="button" id="fermer-affiche">Fermer</button></div>
+  </div>
+</dialog>
+
+<script>
+/* ============================================================
+   CONTENU À MODIFIER : tout se règle ici.
+   - Mettez les photos des tableaux dans un dossier « images »
+     à côté de ce fichier, puis indiquez leur nom dans « fichier ».
+   - Tant que « fichier » est vide, une toile abstraite provisoire
+     s’affiche à la place.
+   - theme : le thème de l’œuvre ; les boutons de filtre se créent
+     tout seuls à partir des thèmes écrits ici (même orthographe).
+   - format : "portrait", "paysage" ou "carre" (sert pour la toile
+     provisoire ; une vraie photo garde ses propres proportions)
+   ============================================================ */
+const OEUVRES = [
+  { theme: "[Thème 1]", fichier: "images/oeuvre-01.jpg", titre: "[Titre de l’œuvre]", technique: "[Technique]", dimensions: "[Dimensions]", annee: "[Année]", format: "paysage" },
+  { theme: "[Thème 1]", fichier: "images/oeuvre-02.jpg", titre: "[Titre de l’œuvre]", technique: "[Technique]", dimensions: "[Dimensions]", annee: "[Année]", format: "portrait" },
+  { theme: "[Thème 2]", fichier: "images/oeuvre-03.jpg", titre: "[Titre de l’œuvre]", technique: "[Technique]", dimensions: "[Dimensions]", annee: "[Année]", format: "portrait" },
+  { theme: "[Thème 2]", fichier: "images/oeuvre-04.jpg", titre: "[Titre de l’œuvre]", technique: "[Technique]", dimensions: "[Dimensions]", annee: "[Année]", format: "carre" },
+  { theme: "[Thème 3]", fichier: "images/oeuvre-05.jpg", titre: "[Titre de l’œuvre]", technique: "[Technique]", dimensions: "[Dimensions]", annee: "[Année]", format: "carre" },
+  { theme: "[Thème 3]", fichier: "images/oeuvre-06.jpg", titre: "[Titre de l’œuvre]", technique: "[Technique]", dimensions: "[Dimensions]", annee: "[Année]", format: "carre" }
+];
+
+/* Photo de l’artiste (laisser vide pour une toile provisoire) */
+const PORTRAIT = "";
+
+/* Salons et expositions : de la plus récente à la plus ancienne.
+   affiche : image de l’affiche dans le dossier « images » (facultatif).
+   a_venir: true affiche la pastille « À venir ». */
+const EXPOSITIONS = [
+  { date: "28 oct. – 1er nov. 2026", titre: "Salon d’Automne 2026", lieu: "Place de la Concorde, Paris. Vernissage le 27 octobre.", affiche: "images/affiche-salon-automne-2026.jpg" },
+  { date: "11 – 16 juillet [année]", titre: "Exposition « Fragrance »", lieu: "Coopérative du Port, Trédrez-Locquémeau. Avec Didier Lozac’h et Guillaume Fichet.", affiche: "images/affiche-fragrance.jpg" },
+  { date: "22 fév. – 1er mars 2026", titre: "Salon 26 de la Société lorientaise des Beaux-Arts", lieu: "Palais des congrès, Lorient.", affiche: "images/affiche-slba-2026.jpg" },
+  { date: "29 oct. – 2 nov. 2025", titre: "Salon d’Automne 2025", lieu: "Place de la Concorde, Paris. Vernissage le 28 octobre.", affiche: "images/affiche-salon-automne-2025.jpg" }
+];
+
+/* Coordonnées : une ligne vide n’est pas affichée. */
+const CONTACT = {
+  email: "",               // ex. "contact@martinemathieu.fr"
+  telephone: "[Téléphone]",
+  atelier: "[Adresse de l’atelier, visites sur rendez-vous]",
+  reseaux: "[Instagram, Facebook…]"
+};
+/* ============================ fin du contenu ============================ */
+
+const RATIOS = { portrait: [4, 5], paysage: [5, 4], carre: [1, 1] };
+const PIGMENTS = ["#F2B33D", "#C8314B", "#2457A6", "#1F8A70", "#EE8AA0", "#2B1D3A", "#F7E4C6", "#E9773A"];
+
+/* Toile abstraite provisoire, différente pour chaque numéro */
+function toileProvisoire(graine, format) {
+  let s = graine * 9301 + 49297;
+  const alea = () => (s = (s * 9301 + 49297) % 233280) / 233280;
+  const [rw, rh] = RATIOS[format] || RATIOS.carre;
+  const W = 400 * rw / Math.max(rw, rh), H = 400 * rh / Math.max(rw, rh);
+  const pick = () => PIGMENTS[Math.floor(alea() * PIGMENTS.length)];
+  let fond = PIGMENTS[graine % 7 === 5 ? 6 : graine % 7], formes = "";
+  for (let i = 0; i < 6; i++) {
+    const c = pick(), x = alea() * W, y = alea() * H;
+    if (alea() < 0.5) {
+      const r = 30 + alea() * 110;
+      formes += `<ellipse cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" rx="${r.toFixed(0)}" ry="${(r * (0.6 + alea() * 0.6)).toFixed(0)}" fill="${c}" opacity="0.88"/>`;
+    } else {
+      const x2 = alea() * W, y2 = alea() * H, cx = alea() * W, cy = alea() * H;
+      formes += `<path d="M${x.toFixed(0)} ${y.toFixed(0)}Q${cx.toFixed(0)} ${cy.toFixed(0)} ${x2.toFixed(0)} ${y2.toFixed(0)}" stroke="${c}" stroke-width="${(14 + alea() * 34).toFixed(0)}" stroke-linecap="round" fill="none" opacity="0.9"/>`;
+    }
+  }
+  return `<svg viewBox="0 0 ${W.toFixed(0)} ${H.toFixed(0)}" role="img" aria-label="Emplacement d’une œuvre, photo à ajouter" preserveAspectRatio="xMidYMid slice"><rect width="100%" height="100%" fill="${fond}"/>${formes}</svg>`;
+}
+
+function visuel(o, i) {
+  if (o.fichier) {
+    return `<img src="${o.fichier}" alt="${o.titre}" loading="lazy" onerror="this.outerHTML=toileProvisoire(${i + 1},'${o.format}')">`;
+  }
+  return toileProvisoire(i + 1, o.format);
+}
+
+function echapper(t) { return String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+
+/* Galerie et filtres par thème */
+const grille = document.getElementById("grille");
+const THEMES = [...new Set(OEUVRES.map(o => o.theme).filter(Boolean))];
+let visibles = OEUVRES.map((o, i) => i);
+
+function legende(o) { return [o.technique, o.dimensions, o.annee].filter(Boolean).join(", "); }
+
+function afficherGalerie(theme) {
+  visibles = OEUVRES.map((o, i) => i).filter(i => !theme || OEUVRES[i].theme === theme);
+  grille.innerHTML = visibles.map(i => {
+    const o = OEUVRES[i], [rw, rh] = RATIOS[o.format] || RATIOS.carre;
+    return `<figure class="oeuvre">
+    <button type="button" data-i="${i}" aria-label="Agrandir : ${echapper(o.titre)}">
+      <div class="toile"${o.fichier ? "" : ` style="aspect-ratio:${rw}/${rh}"`}>${visuel(o, i)}</div>
+    </button>
+    <figcaption><strong>${echapper(o.titre)}</strong><span>${echapper(legende(o))}</span></figcaption>
+  </figure>`;
+  }).join("");
+  document.getElementById("vide").hidden = visibles.length > 0;
+  document.querySelectorAll("#filtres button").forEach(bt =>
+    bt.setAttribute("aria-pressed", String((bt.dataset.theme || "") === (theme || ""))));
+}
+
+const filtres = document.getElementById("filtres");
+if (THEMES.length > 1) {
+  filtres.innerHTML = `<button type="button" data-theme="">Toutes<small>${OEUVRES.length}</small></button>` +
+    THEMES.map(t => `<button type="button" data-theme="${echapper(t)}">${echapper(t)}<small>${OEUVRES.filter(o => o.theme === t).length}</small></button>`).join("");
+  filtres.addEventListener("click", ev => {
+    const bt = ev.target.closest("button");
+    if (bt) afficherGalerie(bt.dataset.theme);
+  });
+} else {
+  filtres.hidden = true;
+}
+afficherGalerie("");
+
+/* Portrait */
+document.getElementById("portrait").innerHTML = PORTRAIT
+  ? `<img src="${PORTRAIT}" alt="Portrait de Martine Mathieu">`
+  : toileProvisoire(42, "portrait");
+
+/* Salons et expositions */
+document.getElementById("chrono").innerHTML = EXPOSITIONS.map((e, k) => `<li${e.affiche ? ' class="avec-affiche"' : ""}>
+  <time>${echapper(e.date)}</time>
+  <div><h3>${echapper(e.titre)}</h3><p>${echapper(e.lieu)}</p>${e.a_venir ? '<span class="a-venir">À venir</span>' : ""}</div>
+  ${e.affiche ? `<button type="button" class="affiche" data-k="${k}" aria-label="Agrandir l’affiche : ${echapper(e.titre)}"><img src="${e.affiche}" alt="" loading="lazy"></button>` : ""}
+</li>`).join("");
+const dlgAffiche = document.getElementById("vue-affiche");
+document.getElementById("chrono").addEventListener("click", ev => {
+  const bt = ev.target.closest("button.affiche");
+  if (!bt) return;
+  const e = EXPOSITIONS[+bt.dataset.k];
+  document.getElementById("affiche-grande").innerHTML = `<img src="${e.affiche}" alt="Affiche : ${echapper(e.titre)}">`;
+  dlgAffiche.showModal();
+});
+document.getElementById("fermer-affiche").onclick = () => dlgAffiche.close();
+dlgAffiche.addEventListener("click", ev => { if (ev.target === dlgAffiche || ev.target.closest("#affiche-grande")) dlgAffiche.close(); });
+
+/* Contact */
+const lignes = [["E-mail", CONTACT.email || "[Adresse e-mail]"], ["Téléphone", CONTACT.telephone], ["Atelier", CONTACT.atelier], ["Réseaux", CONTACT.reseaux]];
+document.getElementById("coordonnees").innerHTML = lignes.filter(l => l[1]).map(l => `<dt>${l[0]}</dt><dd>${echapper(l[1])}</dd>`).join("");
+const lienMail = document.getElementById("lien-mail");
+if (CONTACT.email) lienMail.href = "mailto:" + CONTACT.email; else lienMail.hidden = true;
+document.getElementById("annee").textContent = new Date().getFullYear();
+
+/* Visionneuse */
+const dlg = document.getElementById("visionneuse");
+let courant = 0; /* position dans la liste des œuvres affichées */
+function afficher(pos) {
+  courant = (pos + visibles.length) % visibles.length;
+  const i = visibles[courant], o = OEUVRES[i];
+  document.getElementById("vue-toile").innerHTML = visuel(o, i);
+  document.getElementById("vue-legende").innerHTML = `<strong>${echapper(o.titre)}</strong><br>${echapper(legende(o))}`;
+}
+grille.addEventListener("click", ev => {
+  const b = ev.target.closest("button[data-i]");
+  if (!b) return;
+  afficher(visibles.indexOf(+b.dataset.i));
+  dlg.showModal();
+});
+document.getElementById("prec").onclick = () => afficher(courant - 1);
+document.getElementById("suiv").onclick = () => afficher(courant + 1);
+document.getElementById("fermer").onclick = () => dlg.close();
+dlg.addEventListener("click", ev => { if (ev.target === dlg) dlg.close(); });
+dlg.addEventListener("keydown", ev => {
+  if (ev.key === "ArrowLeft") afficher(courant - 1);
+  if (ev.key === "ArrowRight") afficher(courant + 1);
+});
+
+/* Dissuasion : bloque le clic droit et le glisser-déposer sur les images */
+const zonesImages = ".toile, .tableau-accueil, .affiche, #affiche-grande, .portrait";
+document.addEventListener("contextmenu", ev => { if (ev.target.closest(zonesImages)) ev.preventDefault(); });
+document.addEventListener("dragstart", ev => { if (ev.target.closest(zonesImages) || ev.target.tagName === "IMG") ev.preventDefault(); });
+</script>
+</body>
+</html>
